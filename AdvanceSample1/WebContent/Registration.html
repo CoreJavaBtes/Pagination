@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+
+<style>
+input.ng-invalid {
+    border-color:red;
+    background-color : red;
+}
+input.ng-valid {
+    border-color:lightgreen;
+}
+</style>
+
+
+<body ng-app="">
+
+<div style = "width:1000px; min-height:1000px; border : 1px solid red; margin : 0 auto; background-color: #f9e79f; ">
+
+<div style = "/* float:Right;
+ 	margin-left : 10px;
+	margin-right : 10px;
+	margin-top : 5px;  
+    margin-bottom : 10px; */ margin: 0 auto">
+<form name = "myform" method = "get" action ="Registration_Servlet" onsubmit = "return validateform" >
+
+<table 	style = "align : center;">
+<tr>
+<th colspan="4" style = "text-align : center; font-size : 30px; color : red">Register Here</th></tr>
+<tr><th colspan = "2" style = "text-align : left">Fields marked (*) are required</th></tr>
+<tr><td><label for = "fname" >First Name *</label></td>
+<td><input type = "text" name = "fname"  style = "margin-left : 20px; " ng-model="fname" required /></td>
+<td><label for = "lname" >Last Name *</label></td>
+<td><input type = "text" name = "lname"  style = "margin-left : 20px; " ng-model="lname" required/></td>
+
+<tr><td><label for = "Uname" >User Name *</label></td>
+<td><input type = "text" name = "name"  style = "margin-left : 20px; "  ng-model = "name" /></td>
+<td><span ng-show="myform.name.$touched ">The User name is required.</span></td>
+</tr>
+
+<tr><td><label for = "Uname" >Password</label></td>
+
+<td><input type = "password" name = "pass"  style = "margin-left : 20px"  ng-model = "pass" required/></td>
+<td><span ng-show="myform.pass.$touched && myform.pass.$invalid">The Password is required.</span></td>
+</tr>
+
+<tr><td><label for = "Uname" >Confirm Password *</label></td>
+<td><input type = "password" name = "conpass"  style = "margin-left : 20px" /></td></tr>
+
+<tr><td><label for = "gen" >Gender *</label></td>
+<td><input type = "radio" name = "gen" style = "margin-left : 20px; " value="Male" />Male </td>
+<td><input type = "radio" name = "gen" style = "margin-left : 20px; " value="Female"/>Female</td></tr>
+<tr><td><label for = "Uname" >Email *</label></td>
+<td><input type = "email" name = "email"  style = "margin-left : 20px; " title="Please enter a valid email" ng-model="email"/></td></tr>
+<tr><td><label for = "Uname" >Contact *</label></td>
+<td><input type = "tel" name = "tel"   style = "margin-left : 20px; " /></td></tr>
+<tr><td><label for = "Uname" >Address *</label></td>
+<td><input type = "text" name = "add"  style = "margin-left : 20px; " /></td></tr>
+<tr><td></td>
+<tr><td><label for = "pin" >PinCode *</label></td>
+<td><input id="postcode" name="pin" type="number"  /></td>
+</tr>
+
+<td><input type = "submit" name="Sub" value = "Submit" />
+<input type = "reset" name = "Can" value = "Cancle" /></td></tr>
+
+</table>
+</form>
+
+<h1>{{myform.email.$valid}}</h1>
+<p>Working Well!!!</p>
+
+
+</div>
+
+
+
+
+</div>
+</body>
+</html>
