@@ -45,6 +45,7 @@ public class Login extends HttpServlet {
 		    
 		    String name = config.getInitParameter("username");
 		    String pass = config.getInitParameter("password");
+		    
 		    if(p.equals(pass)){  
 		    	  out.print("Hurry!!!!!"); 
 		        RequestDispatcher rd=request.getRequestDispatcher("/WelcomeServlet");  
